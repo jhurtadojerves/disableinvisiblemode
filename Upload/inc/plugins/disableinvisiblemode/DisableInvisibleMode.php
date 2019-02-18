@@ -115,7 +115,8 @@ class DisableInvisibleMode
     {
         global $extra_user_updates, $mybb;
         $extra_user_updates['caninvisible'] = (int)$mybb->input['caninvisible'];
-        $extra_user_updates['invisible'] = (int)$mybb->input['caninvisible'];
+        if ((int)$mybb->input['caninvisible'] == 0)
+            $extra_user_updates['invisible'] = (int)$mybb->input['caninvisible'];
     }
     function hook_usercp_do_options_end()
     {
