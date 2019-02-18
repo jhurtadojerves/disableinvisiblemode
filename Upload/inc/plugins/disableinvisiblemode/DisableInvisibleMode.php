@@ -41,12 +41,11 @@ class DisableInvisibleMode
         }
 
         $this->_info();
-
         if (!isset($plugins['disableinvisiblemode'])) {
-            $plugins['disableinvisiblemode'] = plugin_info['versioncode'];
+            $plugins['disableinvisiblemode'] = $this->_info['versioncode'];
         }
 
-        $plugins['disableinvisiblemode'] = plugin_info['versioncode'];
+        $plugins['disableinvisiblemode'] = $this->_info['versioncode'];
         $mybb->cache->update('juliens_plugins', $plugins);
     }
     function _deactivate()
